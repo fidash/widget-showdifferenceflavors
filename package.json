@@ -1,6 +1,6 @@
 {
-    "name": "showdifferenceflavors-widget",
-    "description": "Diff widgets helps to show differences.",
+    "name": "ShowDifferenceFlavors-widget",
+    "description": "Diff dgets to show differences between tow flavors.",
     "version": "0.6.0",
     "homepage": "https://github.com/fidash/widget-showdifferenceflavors",
     "author": {

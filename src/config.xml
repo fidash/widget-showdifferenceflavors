@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="FIDASH" name="{diff-widget" version="0.1.0">
+<widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="FIDASH" name="ShowDifferenceFlavors-widget" version="0.6.0">
   <details>
-    <title>Diff Widget</title>
+    <title>ShowDifferenceFlavors-widget</title>
     <homepage>https://github.com/mgarcia/diff-widget</homepage>
     <authors>Miguel Garcia Lafuente</authors>
     <email>miguelglafuente@gmail.com</email>
     <image></image>
     <smartphoneimage></smartphoneimage>
-    <description>Diff widgets helps to show differences.</description>
+    <description>Widget to show differences between tow flavors.</description>
     <longdescription>DESCRIPTION.md</longdescription>
     <changelog>doc/changelog.md</changelog>
     <doc>doc/index.md</doc>
@@ -25,5 +25,5 @@
     <inputendpoint name="compare" type="text" label="Compare JSON" description="compare JSOn" friendcode="compare" />
   </wiring>
   <contents src="index.html"/>
-  <rendering height="47" width="10"/>
+  <rendering height="14" width="3"/>
 </widget>

@@ -1,21 +1,12 @@
 {
     "name": "diff-widget",
     "dependencies": {
-        "jquery": null,
-        "objectdiff": "~1.0.0",
-        "prettydiff": "~1.15.5"
+        "jquery": null
     },
     "devDependencies": {},
     "exportsOverride": {
         "jquery": {
             "js": "dist/jquery.min.js"
-        },
-        "objectdiff": {
-            "js": "objectDiff.js",
-            "css": "style.css"
-        },
-        "prettydiff": {
-            "js": ["prettydiff.js", "api/dom.js"]
         }
     }
 }

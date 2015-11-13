@@ -2,27 +2,44 @@
     <head>
         <meta content="charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="stylesheet" href="css/objectDiff.css"/>
-        <link rel="stylesheet" href="lib/css/style.css"/>
 
         <title>Empty diff-widget widget</title>
     </head>
     <body>
-        <div id="wrapper">
-            <div>
-                <div id="originalname"></div>
-                <pre id="original"></pre>
+
+        <div style="float: left; width: 100%;">
+            <div class="row">
+                <img ondragstart="return false;" ondrop="return false;" class="icon noselect" src="images/disk.png" height="32"/>
+                <div id="publicdisk">
+                    <div style="float: right;">0</div>
+                </div>
+                <div class="miniseparator"/>
+                <div id="privatedisk">
+                    <div style="float: left;">0</div>
+                </div>
             </div>
-            <div>
-                <div id="newonename"></div>
-                <pre id="newone"></pre>
+            <div class="row">
+                <img ondragstart="return false;" ondrop="return false;" class="icon noselect" src="images/cpu.png" height="32"/>
+                <div id="publiccpu">
+                    <div style="float: right;">0</div>
+                </div>
+                <div class="miniseparator"/>
+                <div id="privatecpu">
+                    <div style="float: left;">0</div>
+                </div>
+            </div>
+            <div class="row">
+                <img ondragstart="return false;" ondrop="return false;" class="icon noselect" src="images/ram.png" height="32"/>
+                <div id="publicram">
+                    <div style="float: right;">0</div>
+                </div>
+                <div class="miniseparator"/>
+                <div id="privateram">
+                    <div style="float: left;">0</div>
+                </div>
             </div>
         </div>
 
-        <script src="lib/js/objectDiff.js"></script>
-        <!-- <script src="lib/js/dom.js"></script>
-        <script src="lib/js/prettydiff.js"></script> -->
-        <script src="js/DiffWidget.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
