@@ -23,19 +23,6 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
 
-        bower: {
-            install: {
-                options: {
-                    layout: function (type, component, source) {
-                        return type;
-                    },
-                    targetDir: './build/lib/lib'
-                }
-            }
-        },
-
-
-
         jshint: {
             options: {
                 jshintrc: true
@@ -86,7 +73,22 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'src/js',
                     src: '*',
-                    dest: 'build/src/js'
+                    dest: 'build/js'
+                }, {
+                    expand: true,
+                    cwd: 'node_modules/jquery/dist',
+                    src: 'jquery.min.js',
+                    dest: 'build/lib/js'
+                }, {
+                    expand: true,
+                    cwd: 'node_modules/bootstrap/dist',
+                    src: ['js/bootstrap.min.js', 'css/bootstrap.min.css', 'fonts/*'],
+                    dest: 'build/lib'
+                }, {
+                    expand: true,
+                    cwd: 'node_modules/font-awesome',
+                    src: ['css/font-awesome.min.css', 'fonts/*'],
+                    dest: 'build/lib'
                 }]
             }
         },
@@ -124,13 +126,13 @@ module.exports = function (grunt) {
                     ]
                 }, {
                     expand: true,
-                    cwd: 'build/lib',
+                    cwd: 'build/',
                     src: [
                         'lib/**/*'
                     ]
                 }, {
                     expand: true,
-                    cwd: 'build/src',
+                    cwd: 'build/',
                     src: [
                         'js/**/*'
                     ]
@@ -230,7 +232,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-jsbeautifier');
 
     grunt.registerTask('test', [
-        'bower:install',
         'jshint',
         'jshint:grunt',
         'jscs',

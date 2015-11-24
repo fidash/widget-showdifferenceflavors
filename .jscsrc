@@ -7,7 +7,6 @@
     "disallowTrailingWhitespace": true,
     "disallowMixedSpacesAndTabs": true,
     "disallowNewlineBeforeBlockStatements": true,
-    "disallowFunctionDeclarations": true,
     "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
     "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
     "disallowSpacesInsideArrayBrackets": true,

@@ -14,6 +14,7 @@
     "white": true,
     "globals": {
         "URL": true,
-        "MashupPlatform": true
+        "MashupPlatform": true,
+        "$": true
     }
 }

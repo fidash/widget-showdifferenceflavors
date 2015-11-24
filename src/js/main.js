@@ -2,7 +2,27 @@
 window.onload = function () {
     "use strict";
 
-    MashupPlatform.wiring.registerCallback("compare", function (data) {
+    function highlightHigher(element1, element2, value1, value2) {
+
+        var comparison = value1 > value2 ? 1 : (value2 > value1 ? -1 : 0);
+
+        switch (comparison) {
+            case 1:
+                element1.addClass("highlight");
+                break;
+            case -1:
+                element2.addClass("highlight");
+                break;
+            default:
+        }
+    }
+
+    function clearHighlights() {
+        $("td").removeClass("highlight");
+    }
+
+    function drawData(data) {
+
         var jdata;
         try {
             jdata = JSON.parse(data);
@@ -17,56 +37,41 @@ window.onload = function () {
             throw new MashupPlatform.wiring.ValueTypeError();
         }
 
-        var leftcpu = jdata.from.vcpus || 0,
-            leftdisk = jdata.from.disk || 0,
-            leftram = jdata.from.ram || 0,
-            rightcpu = jdata.to.vcpus || 0,
-            rightdisk = jdata.to.disk || 0,
-            rightram = jdata.to.ram || 0;
+        var publicDisk  = $("#f1-disk"),
+            publicVCPU  = $("#f1-vcpu"),
+            publicRAM   = $("#f1-ram"),
+            publicName  = $("#f1-name"),
+            privateDisk = $("#f2-disk"),
+            privateVCPU = $("#f2-vcpu"),
+            privateRAM  = $("#f2-ram"),
+            privateName = $("#f2-name");
 
-        var publicdisk = document.getElementById("publicdisk"),
-            publiccpu = document.getElementById("publiccpu"),
-            publicram = document.getElementById("publicram"),
-            privatedisk = document.getElementById("privatedisk"),
-            privatecpu = document.getElementById("privatecpu"),
-            privateram = document.getElementById("privateram");
-
-        var maxl = Math.max(String(leftdisk).length,
-                            String(leftcpu).length,
-                            String(leftram).length);
+        var leftVCPU  = jdata.from.vcpus || 0,
+            leftDisk  = jdata.from.disk || 0,
+            leftRAM   = jdata.from.ram || 0,
+            leftName  = jdata.from.name,
+            rightVCPU = jdata.to.vcpus || 0,
+            rightDisk = jdata.to.disk || 0,
+            rightRAM  = jdata.to.ram || 0,
+            rightName = jdata.to.name;
 
 
-        var diskdiff = leftdisk !== rightdisk;
-        var ramdiff = leftram !== rightram;
-        var cpudiff = leftcpu !== rightcpu;
-        var diskgreater = leftdisk > rightdisk;
-        var ramgreater = leftram > rightram;
-        var cpugreater = leftcpu > rightcpu;
+        publicDisk.text(leftDisk + " GiB");
+        publicRAM.text(leftRAM + " MiB");
+        publicVCPU.text(leftVCPU + " VCPUs");
+        publicName.text(leftName);
 
-        publicdisk.innerHTML = '<div class="' + ((diskgreater) ? "green" : "") + '" style="float: right;">' + leftdisk + '</div>';
-        publicdisk.style.width = maxl + 'em';
-        publiccpu.innerHTML = '<div class="' + ((cpugreater) ? "green" : "") + '" style="float: right;">' + leftcpu + '</div>';
-        publiccpu.style.width = maxl + 'em';
-        publicram.innerHTML = '<div class="' + ((ramgreater) ? "green" : "") + '" style="float: right;">' + leftram + '</div>';
-        publicram.style.width = maxl + 'em';
+        privateDisk.text(rightDisk + " GiB");
+        privateRAM.text(rightRAM + " MiB");
+        privateVCPU.text(rightVCPU + " VCPUs");
+        privateName.text(rightName);
 
-        privatedisk.innerHTML = '<div class="' + ((diskdiff && !diskgreater) ? "green" : "") + '" style="float: left;">' + rightdisk + '</div>';
-        privatecpu.innerHTML = '<div class="' + ((cpudiff && !cpugreater) ? "green" : "") + '"  style="float: left;">' + rightcpu + '</div>';
-        privateram.innerHTML = '<div class="' + ((ramdiff && !ramgreater) ? "green" : "") + '" style="float: left;">' + rightram + '</div>';
+        clearHighlights();
+        highlightHigher(publicVCPU, privateVCPU, leftVCPU, rightVCPU);
+        highlightHigher(publicRAM, privateRAM, leftRAM, rightRAM);
+        highlightHigher(publicDisk, privateDisk, leftDisk, rightDisk);
 
-        // var diskdiff = leftdisk !== rightdisk;
-        // var ramdiff = leftram !== rightram;
-        // var cpudiff = leftcpu !== rightcpu;
+    }
 
-        // publicdisk.innerHTML = '<div class="' + ((diskdiff) ? "red" : "") + '" style="float: right;">' + leftdisk + '</div>';
-        // publicdisk.style.width = maxl + 'em';
-        // publiccpu.innerHTML = '<div class="' + ((cpudiff) ? "red" : "") + '" style="float: right;">' + leftcpu + '</div>';
-        // publiccpu.style.width = maxl + 'em';
-        // publicram.innerHTML = '<div class="' + ((ramdiff) ? "red" : "") + '" style="float: right;">' + leftram + '</div>';
-        // publicram.style.width = maxl + 'em';
-
-        // privatedisk.innerHTML = '<div class="' + ((diskdiff) ? "green" : "") + '" style="float: left;">' + rightdisk + '</div>';
-        // privatecpu.innerHTML = '<div class="' + ((cpudiff) ? "green" : "") + '"  style="float: left;">' + rightcpu + '</div>';
-        // privateram.innerHTML = '<div class="' + ((ramdiff) ? "green" : "") + '" style="float: left;">' + rightram + '</div>';
-    });
+    MashupPlatform.wiring.registerCallback("compare", drawData);
 };
