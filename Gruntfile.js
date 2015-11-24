@@ -197,6 +197,9 @@ module.exports = function (grunt) {
                     helpers: '<%= jasmine.test.options.helpers %>',
                     specs: '<%= jasmine.test.options.specs %>',
                     vendor: '<%= jasmine.test.options.vendor %>',
+                    junit: {
+                        path: 'build/test-reports'
+                    },
                     template: require('grunt-template-jasmine-istanbul'),
                     templateOptions: {
                         coverage: 'build/coverage/json/coverage.json',
