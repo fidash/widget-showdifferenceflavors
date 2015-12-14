@@ -23,6 +23,8 @@ window.onload = function () {
 
     function drawData(data) {
 
+        $(".placeholder").hide();
+
         var jdata;
         try {
             jdata = JSON.parse(data);

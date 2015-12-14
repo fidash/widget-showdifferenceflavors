@@ -32,3 +32,19 @@ tr, th {
 .highlight {
     background-color: rgba(119, 232, 119, 0.78);
 }
+
+.placeholder {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #777;
+    position: absolute;
+}
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.7em;
+}
