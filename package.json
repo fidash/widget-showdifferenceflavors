@@ -1,48 +1,43 @@
 {
-  "name": "ShowDifferenceFlavors-widget",
-  "description": "Diff dgets to show differences between tow flavors.",
-  "version": "0.9.0",
-  "homepage": "https://github.com/fidash/widget-showdifferenceflavors",
-  "author": {
-    "name": "Miguel Garcia Lafuente",
-    "email": "miguelglafuente@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/fidash/widget-showdifferenceflavors.git"
-  },
-  "bugs": {
-    "url": "https://github.com/fidash/widget-showdifferenceflavors/issues"
-  },
-  "licenses": [
-    {
-      "type": "Apache2",
-      "url": "https://github.com/fidash/widget-showdifferenceflavors/blob/master/LICENSE-Apache2"
+    "name": "ShowDifferenceFlavors-widget",
+    "description": "Diff dgets to show differences between tow flavors.",
+    "version": "0.9.0",
+    "homepage": "https://github.com/fidash/widget-showdifferenceflavors",
+    "author": {
+        "name": "Miguel Garcia Lafuente",
+        "email": "mgarcia@conwet.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/fidash/widget-showdifferenceflavors.git"
+    },
+    "bugs": {
+        "url": "https://github.com/fidash/widget-showdifferenceflavors/issues"
+    },
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "grunt-contrib-clean": "~0.6.0",
+        "grunt-contrib-compress": "^0.11.0",
+        "grunt-contrib-copy": "^0.8.0",
+        "grunt-contrib-jasmine": "^1.0.0",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-jsbeautifier": "~0.2.10",
+        "grunt-jscs": "^1.2.0",
+        "grunt-strip-code": "^0.1.2",
+        "grunt-template-jasmine-istanbul": "^0.3.0",
+        "grunt-text-replace": "~0.4.0",
+        "grunt-wirecloud": "^0.7.1",
+        "jasmine-jquery": "~2.1.0",
+        "jquery": "^2.1.1",
+        "mock-applicationmashup": "^0.1.3"
+    },
+    "keywords": [
+        "widget"
+    ],
+    "vendor": "UPM-ETSIINF",
+    "dependencies": {
+        "bootstrap": "^3.3.5",
+        "font-awesome": "^4.4.0",
+        "jquery": "^2.1.4"
     }
-  ],
-  "devDependencies": {
-    "grunt-contrib-clean": "~0.6.0",
-    "grunt-contrib-compress": "^0.11.0",
-    "grunt-contrib-copy": "^0.8.0",
-      "grunt-contrib-jasmine": "^1.0.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-jsbeautifier": "~0.2.10",
-    "grunt-jscs": "^1.2.0",
-    "grunt-strip-code": "^0.1.2",
-    "grunt-template-jasmine-istanbul": "^0.3.0",
-    "grunt-text-replace": "~0.4.0",
-    "grunt-wirecloud": "^0.7.1",
-    "jasmine-jquery": "~2.1.0",
-    "jquery": "^2.1.1",
-    "mock-applicationmashup": "^0.1.3"
-  },
-  "keywords": [
-    "widget"
-  ],
-  "vendor": "UPM-ETSIINF",
-  "dependencies": {
-    "bootstrap": "^3.3.5",
-    "font-awesome": "^4.4.0",
-    "jquery": "^2.1.4"
-  }
 }

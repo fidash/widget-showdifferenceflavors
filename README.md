@@ -1,7 +1,12 @@
 Diff Widget widget
 ======================
 
-The Diff Widget widget is a WireCloud widget that provides ...
+[![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/fidash/widget-showdifferenceflavors/master/LICENSE)
+[![Support badge](https://img.shields.io/badge/support-askbot-yellowgreen.svg)](http://ask.fiware.org)
+[![Build Status](https://build.conwet.fi.upm.es/jenkins/view/FI-Dash/job/Widget%20ShowDifferenceFlavors/badge/icon)](https://build.conwet.fi.upm.es/jenkins/view/FI-Dash/job/Widget%20ShowDifferenceFlavors/)
+
+
+The Diff Widget widget is a WireCloud widget that provides an easy wiring way to see flavor differences.
 
 Build
 -----
